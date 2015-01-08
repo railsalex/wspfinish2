@@ -1,0 +1,24 @@
+<div id="image-view">
+  <ul id="all-images">
+    <li><%= image_tag "chinese.jpg", { :height => "350", :width => "963" } %></li>
+    <li><%= image_tag "download.jpeg", { :height => "350", :width => "963" } %></li>
+    <li><%= image_tag "subway.jpg", { :height => "350", :width => "963" } %></li>
+    <li><%= image_tag "KFC.jpg", { :height => "350", :width => "963" } %></li>
+    <li><%= image_tag "japanese.jpeg", { :height => "350", :width => "963" } %></li>
+  </ul>
+  <div id="images-buttons">
+    <% 5.times do |i| %>
+      <span class="images-button orange-color"><%= i+1 %></span>
+    <% end %>
+  </div>
+</div>
+<div>
+  <div class="subtitle-box">
+    <h2 class="subtitle">partner</h2>
+  </div>
+  <ul class="groups">
+    <% @restaurants.each do |r| %>
+      <li class="white-border"><%= link_to image_tag(r.logo, { height: '160', width: '220' }), restaurant_path(r) %></li>
+    <% end %>
+  </ul>
+</div>

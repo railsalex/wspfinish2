@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+      <div id="wrapper" class="orange-color">
+          <h1 id="logo">HUNGRY</h1>
+          <ul id="nav">
+              <li><%= link_to "Homepage", root_path, :class => "nav-bar" %></li>
+              <li><%= link_to "Carts", cart_path(current_user), :class => "nav-bar" %></li>
+              <li><%= link_to "Admin", admin_restaurants_path, :class => "nav-bar" %></li>
+              <li><%= link_to "About", "#", :class => "nav-bar" %></li>
+          </ul>
+          <span class="notice"><%= "Tips：" + flash[:notice] if flash[:notice] %></span>
+          <ul id="nav-right">
+            <% if signed_in? %>
+              <li><%= link_to current_user.name, user_path(current_user), :class => "nav-login" %></li>
+              <li><span class="block"> | </span></li>
+              <li><%= link_to "Sign out", signout_path, method: :delete, :class => "nav-login" %></li>
+            <% else %>
+              <li><%= link_to "Sign in", signin_path, :class => "nav-login" %></li>
+              <li><span class="block"> | </span></li>
+              <li><%= link_to "Sign up", signup_path, :class => "nav-login" %></li>
+            <% end %>
+          </ul>
+      </div>
+  </div>
+
+  
+  <div id="main" class='<%= content_width %>'>
+    <%= yield %>
+  </div>
+
+<%= debug(params) if Rails.env.development? %>
+
+  <div id="footer">
+    <span>no version right if you want just use it</span>
+  </div>
+
+</body>
+</html>

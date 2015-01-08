@@ -1,0 +1,40 @@
+<div>
+    <div class="subtitle-box">
+        <h2 class="restaurant-name orange-color"><%= @restaurant.name %></h2>
+        <p class="restaurant-info"><%= @restaurant.telephone %>
+          <span class="orange-color font-weight"> | </span>
+          <%= @restaurant.start_time.strftime('%H:%M') %>
+          <span> -- </span>
+          <%= @restaurant.end_time.strftime('%H:%M') %>
+          <span class="orange-color font-weight"> | </span>
+          <%= @restaurant.address %>
+        </p>
+    </div>
+    <%= image_tag "subway.jpg", { height: 240, width: 963 } %>
+</div>
+<div>
+    <div class="subtitle-box">
+        <h2 class="subtitle">classify：</h2>
+        <ul class="types">
+          <% @restaurant.groups.each do |g| %>
+            <li><%= link_to g.name, restaurant_path(:id => @restaurant.id, :type => g.id ), :class => "type" %></li>
+          <% end %>
+        </ul>
+    </div>
+    <div>
+      <ul class="groups">
+        <% @dish = Dish.all %>
+        <% @dish.each do |dish| %>
+          <li class="dish">
+            <%= image_tag dish.img_url, { height: '180', width: '220' }  %>
+            <p>
+              <span class="dish-name"><%= dish.name %></span>
+              <span class="dish-price orange-color"><%= number_to_currency(dish.price) %></span></p>
+            <span class="link-button dish-button font-weight">
+              <%= link_to "Add it to cart", line_items_path(dish_id: dish), method: :post %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+</div>

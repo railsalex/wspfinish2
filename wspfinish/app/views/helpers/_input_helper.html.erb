@@ -1,0 +1,6 @@
+<div class="input-control">
+  <%= label_tag(field, t("#{f.object.class}.#{field}"), :class => "control-lable") %>
+  <%= eval("f.#{type} '#{field}', :class => 'sign-input'") %>
+  <span class="need-sign"><%= aster ? "*" : "" %></span>
+  <span class="error-message orange-color"><%= error_messages %></span>
+</div>

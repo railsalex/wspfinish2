@@ -1,0 +1,15 @@
+<% provide(:title, t('Sign.signin'))  %>
+<h1 class="title orange-color"><%= t('Sign.signin') %></h1>
+<div class="column-left">
+  <%= form_for(:session, url: sessions_path) do |f| %>
+
+    <%= input_helper(f, :name, :text_field) %>
+    <%= input_helper(f, :password, :password_field) %>
+
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+
+<div class="column-right">
+  <h3><%= link_to "Sign up", signup_path, :class => "orange-color" %></h3>
+</div>

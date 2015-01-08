@@ -1,0 +1,10 @@
+<h1 class="title orange-color"><%= t('Restaurant.create') %></h1>
+<%= form_for(:restaurant, :url => admin_restaurants_createrestaurant_path) do |f| %>
+ <%= input_helper(f, :name, :text_field) %>
+  <%= input_helper(f, :telephone, :text_field) %>
+  <%= input_helper(f, :address, :text_field) %>
+  <%= input_helper(f, :start_time, :time_select) %>
+  <%= input_helper(f, :end_time, :time_select) %>
+    <%= f.submit "create",  :class => "link-button smaller-size"%>
+  <%= link_to t('back'), admin_restaurants_path, :class => "link-button smaller-size" %>
+<% end %>

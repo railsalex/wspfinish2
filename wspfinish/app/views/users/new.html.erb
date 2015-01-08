@@ -1,0 +1,25 @@
+<% provide(:title, t('Sign.signup'))  %>
+<h1 class="title orange-color"><%= t('Sign.signup') %></h1>
+<div class="column-left">
+  <%= form_for @user do |f| %>
+
+    <%= input_helper(f, :name, :text_field, true) %>
+    <%= input_helper(f, :email, :email_field, true) %>
+    <%= input_helper(f, :password, :password_field, true) %>
+    <%= input_helper(f, :password_confirmation, :password_field, true) %>
+    <%= input_helper(f, :telephone, :telephone_field) %>
+    <%= input_helper(f, :address, :text_field) %>
+
+    <%= f.submit "Sign up", :class => "link-button" %>
+  <% end %>
+</div>
+
+<div class="column-right">
+  <h3><%= link_to "sign in please", signin_path, :class => "orange-color" %></h3>
+  <h5>Tips：</h5>
+  <ul class="prompt">
+  <li><P>* means the field where you have to fill in</li>
+  <li><p>Telephone and address will give you a more convenient server</p></li>
+  <li><p>Your telephone and address will only provide to the restaurants</p></li>
+  </ul>
+</div>

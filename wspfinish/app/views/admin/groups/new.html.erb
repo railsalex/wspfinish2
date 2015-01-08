@@ -1,0 +1,6 @@
+<h1 class="title orange-color"><%= t('Group.create')  %></h1>
+<%= form_for(@group, :url => admin_groups_path(:restaurant_id => @group.restaurant.id)) do |f| %>
+  <%= input_helper(f, :name, :text_field) %>
+  <%= f.submit "commit", :class => "link-button" %>
+  <%= link_to t('back'), admin_restaurant_path(@group.restaurant), :class => "link-button smaller-size" %>
+<% end %>

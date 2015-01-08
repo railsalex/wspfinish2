@@ -1,0 +1,33 @@
+<h1 class="title orange-color"><%= t('Admin.restaurants') %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('Restaurant.name') %></th>
+      <th><%= t('Restaurant.telephone') %></th>
+      <th><%= t('Restaurant.address') %></th>
+      <th><%= t('admin') %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @restaurants.each do |r| %>
+    
+
+      <tr>
+        <td><%= r[:name] %></td>
+        <td><%= r[:telephone] %></td>
+        <td><%= r[:address] %></td>
+        <td><span class="orange-color"><%= link_to t('show'), restaurant_path(r), :target => "_blank" %></span>
+            <span class="orange-color"><%= link_to t('change'), edit_admin_restaurant_path(r) %></span>
+            <span class="orange-color"><%= link_to t('delete'), admin_restaurant_path(r), method: :delete %></span>
+            <span class="orange-color"><%= link_to t('Dish.edit'), admin_restaurant_path(r) %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4" class="text-right"><span class="orange-color"><%= link_to t('Restaurant.create'), new_admin_restaurant_path %></span></td>
+    </tr>
+  </tfoot>
+</table>

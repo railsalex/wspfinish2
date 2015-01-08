@@ -1,0 +1,43 @@
+<% provide(:title, t('Item.item'))  %>
+<h1 class="title orange-color"><%= t('item') %></h1>
+<table class="items-infro gray-border-bottom">
+  <thead class="gray-border-bottom">
+    <tr class="table-bar">
+      <th class="th-resta"><%= t('restaurant') %></th>
+      <th class="th-dish"><%= t('Dish.name') %></th>
+      <th class="th-quant"><%= t('Item.quantity') %></th>
+      <th class="th-price"><%= t('Dish.price') %></th>
+      <th class="th-change"><%= t('change') %></th>
+    </tr>
+  </thead>
+  <tbody class="gray-border-bottom">
+    <% @cart.line_items.each do |item| %>
+      <tr>
+        <td><%= item.dish.group.restaurant.name %></td>
+        <td><%= item.dish.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency(item.dish.price) %></td>
+        <td><%= link_to t('delete'), line_item_path(item), method: :delete, :class => "smaller-font" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="5" class="orange-color">Total：<%= number_to_currency(current_cart.sum_price) %></th>
+    </tr>
+  </tfoot>
+</table>
+
+<%= form_for(current_cart)  do |f| %>
+  <div class="float-left">
+    <%= label_tag(:address, t('Cart.address')+"：") %>
+    <%= f.text_field :address, :value => current_user.address %>
+  </div>
+  <div class="float-right">
+    <%= label_tag(:telephone, t('Cart.telephone')+"：") %>
+    <%= f.text_field :telephone, :value => current_user.telephone %>
+  </div>
+  <div class="input-control">
+    <%= f.submit "submit order", :class => "link-button float-right" %>
+  </div>
+<% end %>

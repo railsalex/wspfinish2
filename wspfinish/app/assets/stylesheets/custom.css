@@ -1,0 +1,517 @@
+body, div{ 
+    margin:0px;
+    padding:0px;
+}
+
+div{
+    overflow:hidden;
+}
+
+ul{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    overflow: hidden;
+}
+
+img{
+    margin: 0px;
+    display: block;
+    border: none;
+}
+
+a{
+    text-decoration:none;
+    outline:0;
+    color: inherit;
+}
+
+input{
+    outline:0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 网页框架 */
+
+body{
+    background: #eaeaea url(background.jpg);
+    font-family:"微软雅黑";
+    color: #666;
+}
+
+.orange-color{
+    color: #f56302;
+}
+
+.margin-top-bottom-30px{
+    margin:30px 0;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.smaller-size{
+    font-size: 12px;
+}
+.block{
+    display: block;
+}
+
+.inline{
+    display: inline;
+}
+
+.smaller-font{
+    font-size: 10px;
+}
+
+.font-weight{
+    font-weight: bold;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.gray-border-bottom{
+    border-bottom: 1px solid #ededed;
+}
+
+.normal-width{
+    width:963px;
+}
+
+.small-width{
+    width: 661px;
+}
+
+.padding-20px{
+    padding: 20px;
+}
+
+#header{
+    width: 100%;
+    height: 39px;
+    background: rgba(255,255,255,0.50);
+    border-bottom: 1px solid #e0dede;
+    box-shadow: 0 0 4px rgba(0,0,0,0.15);
+}
+
+.notice{
+    margin-left: 100px;
+    overflow: hidden;
+}
+
+#wrapper{
+    width: 963px;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height:39px;
+}
+
+#logo{
+    width: 85px;
+    height: 100%;
+    margin: 0px;
+    background: url(xiaofantuan.png);
+    float: left;
+    text-indent: -9999px;
+}
+
+#nav{
+    float:left;
+}
+
+#nav>li, #nav-right>li{
+    float: left;
+    display: block;
+}
+
+#nav-right {
+    float: right;
+}
+
+.nav-bar, .nav-login{
+    font-weight: normal;
+    display: block;
+}
+
+.nav-bar{
+    padding: 0 10px 0 10px;
+}
+
+.nav-bar:hover{
+    background: rgba(0,0,0,0.1);
+}
+
+#footer{
+    width: 963px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+
+#main{
+    background:#fff;
+    margin: 20px auto;
+    border-radius: 3px;
+    box-shadow: #ccc 0px 1px 2px;
+}
+
+#image-view{
+    height:350px;
+    position: relative;
+}
+
+#all-images{
+    margin: 0;
+    width:4815px;
+    position: relative;
+}
+
+#all-images li{
+    float: left;
+    display: block;
+}
+
+#images-buttons{
+    padding: 10px 0;
+    height: 30px;
+    width: 280px;
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    right: 0;
+}
+
+.images-button{
+    margin: 0 10px;
+    height: 28px;
+    width: 28px;
+    background: #fff;
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 15px;
+    box-shadow:  0 0 4px rgba(0,0,0,0.3);
+    border: 1px solid #e0dede;
+    cursor: pointer;
+}
+
+.images-button:hover{
+    font-weight: bolder;
+    background: #f56302;
+    color: #fff;
+}
+
+.subtitle, .restaurant-name{
+    margin: 0px;
+    display: inline-block;
+    float: left;
+}
+
+.subtitle{
+    font-size: inherit;
+    color: #666;
+}
+
+.restaurant-name{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.subtitle-box{
+    margin: 0;
+    padding: 5px 15px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.restaurant-info{
+    margin: 0;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+}
+
+.groups{
+    width: 964px;
+}
+
+.groups > li{
+    width: 220px;
+    float: left;
+    padding: 10px;
+}
+
+.white-border{
+    border-right: 1px solid #fff;
+}
+
+.dish{
+    position: relative;
+    font-size: 14px;
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+}
+
+.dish>p{
+    margin: 0;
+    height: 30px;
+    width: 220px;
+    line-height: 20px;
+    position: absolute;
+    top: 160px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+/*.dish-name, .dish-price{
+    display: block;
+}*/
+
+.dish-name{
+    line-height: 30px;
+    margin-left: 10px;
+    float: left;
+}
+
+.dish-price{
+    margin-right: 10px;
+    font-size: 18px;
+    float: right;
+    line-height: 30px;
+}
+
+.dish-button{
+    float: right;
+    margin: 3px 10px;
+    font-size: 12px;
+}
+
+.gray-border{
+    border-right: 1px solid #ddd;
+}
+
+.types{
+    float: left;
+}
+
+.types > li{
+    float: left;
+    margin-right: 10px;
+}
+
+.type{
+    padding: 0 10px;
+    display: block;
+}
+
+.type:hover{
+    color: #fff;
+    background: #f56302;
+    border-radius: 3px;
+}
+
+.column-left{
+    border-right: 1px solid #ededed;
+    margin-right: 20px;
+    padding-right: 20px;
+    width: 410px;
+    float: left;
+}
+
+.column-right{
+    width: 210px;
+    line-height: 18px;
+}
+
+.column-right h3{
+    margin: 60px 30px;
+}
+
+.column-right h5{
+    margin: 10px 0px;
+}
+
+.column-right a{
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.prompt{
+    padding-left: 20px;
+    list-style: disc;
+    font-size: 13px;
+}
+
+.title{
+    font-size: 18px;
+    line-height: 40px;
+    padding-bottom: 15px;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #ededed;
+}
+
+.control-lable{
+    font-size: 12px;
+    line-height: 20px;
+}
+
+input:focus{
+    border-color: rgba(254,99,2,0.8);
+    box-shadow: 0 0 5px #f56302;
+    transition: border linear .2s, box-shadow linear .2s;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+}
+
+.sign-input{
+    width: 367px;
+    line-height: 20px;
+    height: 20px;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #666;
+    display: inline-block;
+    padding: 4px 6px;
+}
+
+.input-control{
+    margin-bottom: 10px;
+    overflow: visible;
+}
+
+.need-sign{
+    display: inline-block;
+    line-height: 30px;
+    color: #f56302;
+}
+
+.link-button{
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.2) 1px 1px 2px;
+    color: #fff;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    background-color: #464646;
+}
+
+.link-button:hover{
+    background-color: #f56302;
+}
+
+
+.error-message{
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.field_with_errors{
+    display: inline-block;
+    overflow: visible;
+}
+
+.field_with_errors>input{
+        border: 1px solid #f56302;
+}
+
+.item-box{
+    padding: 20px;
+}
+
+.item-title{
+    text-align: center;
+}
+
+.items-infro{
+    text-align: center;
+    margin: 0px;
+    padding: 0;
+    border-collapse:collapse;
+}
+
+.items-infro th{
+
+}
+
+.th-resta{
+    width: 180px;
+}
+
+.th-dish{
+    width: 300px;
+}
+
+.th-quant{
+    width: 40px;
+}
+
+.th-price{
+    width: 80px;
+}
+
+.th-change{
+    width: 60px;
+}
+
+thead{
+
+}
+tbody>tr:nth-child(even){
+    background: #eee;
+}
+
+tfoot th{
+    text-align: right;
+    padding: 0 20px;
+    line-height: 40px;
+}
+
+.edit_cart{
+    margin: 20px 0;
+
+}
+
+.edit_cart > div {
+    margin-bottom: 20px;
+}
+
+.edit_cart  label {
+    display: inline-block;
+    float: left;
+}
+
+.edit_cart  input{
+    margin-right: 20px;
+}
+
+
+.edit_cart  label{
+    margin: 0;
+    line-height: 25px;
+}

@@ -1,0 +1,42 @@
+<h1 class="title orange-color"><%= t('Admin.dishes') + "(" +@restaurant.name + ")" %></h1>
+<div class="gray-border-bottom margin-top-bottom-30px">
+  <p><span class="font-weight"><%= t("group")+": " %></span>
+     <% @restaurant.groups.each do |g| %>
+      <span><%= link_to g.name, edit_admin_group_path(g), :class => "orange-color"  %></span>
+     <% end %>
+     <span class="orange-color float-right">
+       <%= link_to t("Group.create"), new_admin_group_path(:restaurant_id => @restaurant.id) %>
+     </span>
+   </p>
+</div>
+<table class="items-infro gray-border-bottom">
+  <thead class="gray-border-bottom">
+    <tr class="table-bar">
+      <th class="th-resta"><%= t('group') %></th>
+      <th class="th-dish"><%= t('Dish.name') %></th>
+      <th class="th-quant"><%= t('Dish.statu') %></th>
+      <th class="th-price"><%= t('Dish.price') %></th>
+      <th class="th-change"><%= t('admin') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurant.groups.each do |g| %>
+      <% g.dishes.each do |d| %>
+        <tr>
+          <td><%= d.group.name %></td>
+          <td><%= d.name %></td>
+          <td><%= d.statu ? t('Dish.normal') : t('Dish.unnormal') %></td>
+          <td><%=  number_to_currency(d.price) %></td>
+          <td><span class="orange-color block"><%= link_to t('change'), edit_admin_dish_path(d) %></span>
+              <span class="orange-color"><%= link_to t('delete'), admin_dish_path(d), method: :delete %></span>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4" class="text-right"><span class="orange-color"><%= link_to t('Dish.create'), new_admin_dish_path(:restaurant_id => @restaurant.id) %></span></td>
+    </tr>
+  </tfoot>
+</table>
